@@ -1,0 +1,13 @@
+{
+  "name": "viewxtend",
+  "version": "1.0.0",
+  "description": "Youtube with extra features",
+  "main": "index.js",
+  "scripts": {},
+  "author": "Fate",
+  "license": "GPL-3",
+  "devDependencies": {
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4"
+  }
+}
