@@ -13,7 +13,7 @@
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/DragSpeed.vxt.plugin.js",
         "runs_on": ".*\/watch\\?v=.*",
-        "id": "adblock"
+        "id": "dragspeed"
     },
     {
         "name": "Premium Logo",
@@ -21,7 +21,7 @@
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/PremiumLogo.vxt.plugin.js",
         "runs_on": ".*",
-        "id": "adblock"
+        "id": "premiumlogo"
     },
     {
         "name": "PornHub Logo",
@@ -29,6 +29,6 @@
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/PornHubLogo.vxt.plugin.js",
         "runs_on": ".*",
-        "id": "adblock"
+        "id": "phlogo"
     }
 ]
