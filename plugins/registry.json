@@ -4,7 +4,7 @@
         "description": "Blocks advertisements.",
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/ADBlocker.vxt.plugin.js",
-        "runs_on": ".*",
+        "runs_on": "/.*/",
         "id": "adblock"
     },
     {
@@ -12,7 +12,7 @@
         "description": "Dragging with right click changes playback speed.",
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/DragSpeed.vxt.plugin.js",
-        "runs_on": ".*\/watch\\\\?v=.*",
+        "runs_on": "/.*\\/watch\\?v=.*/gm",
         "id": "dragspeed"
     },
     {
@@ -20,7 +20,7 @@
         "description": "Changes logo and title to premium one.",
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/PremiumHeading.vxt.plugin.js",
-        "runs_on": ".*",
+        "runs_on": "/.*/",
         "id": "premiumheading"
     },
     {
@@ -28,7 +28,7 @@
         "description": "I have no idea why i had this idea.",
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/PornHubLogo.vxt.plugin.js",
-        "runs_on": ".*",
+        "runs_on": "/.*/",
         "id": "phlogo"
     }
 ]
