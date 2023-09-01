@@ -62,8 +62,10 @@ function download() {
 }
 
 window.addEventListener("load", ()=>{
-    let e = document.querySelector("#flexible-item-buttons > ytd-download-button-renderer > ytd-button-renderer > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill");
-    e.addEventListener("click", ()=>{
-        download()
-    })
+    setTimeout(()=>{
+        let e = document.querySelector("#flexible-item-buttons > ytd-download-button-renderer > ytd-button-renderer > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill");
+        e.addEventListener("click", ()=>{
+            download()
+        })
+    }, 2000)
 })
