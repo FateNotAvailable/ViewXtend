@@ -32,11 +32,19 @@ class ViewXtendAPI {
     }
 
     get_fake_videos() {
-        return document.getElementsByTagName("ytd-in-feed-ad-layout-renderer");
+        return document.getElementsByTagName("ytd-ad-slot-renderer");
     }
 
     set_title(title) {
         document.title = title
+    }
+
+    get_title() {
+        return document.title
+    }
+
+    get_video_title() {
+        return document.querySelector("#title > h1 > yt-formatted-string")
     }
 
 

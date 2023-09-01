@@ -7,10 +7,19 @@ class ADBlock {
 
     block_general_ads() {
         let ad_videos = this.VX_API.get_fake_videos();
+        let legit_videos = this.VX_API.get_videos();
+        let last_video = legit_videos[legit_videos.length - 1];
 
         for (let i = 0; i < ad_videos.length; i++) {
-            ad_videos[i].style.display = 'none';
-            ad_videos[i].parentNode.removeChild(ad_videos[i]);
+            ad_videos[i].parentNode.replaceChild(last_video, ad_videos[i]);
+            // TODO: Make it remove the last video so there are no duplicates
+            //last_video.parentNode.removeChild(last_video);
+        }
+
+        let banners = document.getElementsByClassName("ytd-banner-promo-renderer-background");
+        for (let i = 0; i < banners.length; i++) {
+            banners[i].style.display = 'none';
+            banners[i].parentNode.removeChild(banners[i]);
         }
     }
 
