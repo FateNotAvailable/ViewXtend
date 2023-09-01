@@ -59,6 +59,9 @@ function download() {
             act = act[act.length-1];
 
             act.parentNode.replaceChild(createStyledButton(), act);
+
+            let sbs = document.querySelectorAll("#subtitle");
+            sbs[sbs.length - 1].style.display = 'none';
             die();
         }
         catch {}
