@@ -6,7 +6,6 @@ function drag_speed() {
         var player__ = document.querySelector("#movie_player");
         var div_element = document.createElement("div");
         div_element.id = "vxt-player-info";
-        div_element.style.display = 'block';
         div_element.style.color = "#fff";
         div_element.style.left = "0";
         div_element.style.padding = "7px 0";
@@ -17,11 +16,19 @@ function drag_speed() {
         div_element.style.fontSize = '17px';
         div_element.style.textAlign = 'center';
         div_element.style.zIndex = '2147483647';
+        div_element.style.display = 'none';
         div_element.innerText = "10x";
         player__.appendChild(div_element);
         return document.getElementById("vxt-player-info");
     }
 
+    function hide(elem) {
+        elem.style.display = "none";
+    }
+
+    function show(elem) {
+        elem.style.display = "block";
+    }
 
     let DS_API = new window.ViewXtendAPI();
     DS_API.suicidalInterval(() => {
@@ -50,13 +57,21 @@ function drag_speed() {
                         // Find the closest speed from the predefined list
                         const closestSpeed = findClosestSpeed(playbackSpeed, playbackSpeeds);
                         video.playbackRate = closestSpeed;
-                        get_info_elem().innerText = `${closestSpeed.toString()}x`;
+                        let elem = get_info_elem();
+                        show(elem);
+                        elem.innerText = `${closestSpeed.toString()}x`;
+
+                        setTimeout(()=>{
+                            hide(elem);
+                        }, 1000)
                     }
 
                     function handleMouseUp() {
                         document.removeEventListener('mousemove', handleMouseMove);
                         document.removeEventListener('mouseup', handleMouseUp);
-                        DS_API.get_player().play();
+                        if (DS_API.get_player().paused) {
+                            DS_API.get_player().play();
+                        }
                     }
                 }
             });
