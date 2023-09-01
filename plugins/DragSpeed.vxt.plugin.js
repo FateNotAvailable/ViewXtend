@@ -1,6 +1,5 @@
 function drag_speed() {
     if (window._faf3egw4p == true) { return };
-    try {
         let DS_API = new window.ViewXtend();
         const video = DS_API.get_player();
         let playbackSpeed = 1; // Start with 1 as the initial playback speed
@@ -43,8 +42,6 @@ function drag_speed() {
             });
         }
         window._faf3egw4p = true;
-    }
-    catch {}
 };
 window.addEventListener("load", ()=>{
     drag_speed();
