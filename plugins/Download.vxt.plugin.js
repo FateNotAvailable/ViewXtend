@@ -4,11 +4,8 @@ function download() {
             let download_text = document.querySelector("#action-button > yt-button-shape > button > div > span");
             download_text.innerText = "Download";
 
-            document.querySelector("#description").style.display = 'none';
+            document.querySelectorAll("#description")[4].style.display = 'none';
 
-            document.querySelector("#action-button > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill").addEventListener("click", (e)=>{
-                console.log(ViewXtendAPI.get_checked_download())
-            })
 
             function createStyledButton() {
                 // Create a new button element
@@ -39,8 +36,14 @@ function download() {
                     const queryString = window.location.search;
                     const urlParams = new URLSearchParams(queryString);
                     const vValue = urlParams.get('v');
-
-                    const res = ViewXtendAPI.get_checked_download().parentElement.parentNode.querySelector("#label").innerText.split("(")[1].split(")")[0];
+                    
+                    let res = "480p";
+                    try {
+                        res = ViewXtendAPI.get_checked_download().parentElement.parentNode.querySelector("#label").innerText.split("(")[1].split(")")[0];
+                    }
+                    catch {
+                        res = "480p";
+                    }
                     document.querySelector("#dismiss-button > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill").click()
                     const mp4Url = `https://seagreenrecursivecommand--ywp78648.repl.co/download.mp4?id=${vValue}&res=${res}`;
                     const a = document.createElement('a');
@@ -52,7 +55,8 @@ function download() {
                 return button;
             }
 
-            let act = document.querySelector("#action-button");
+            let act = document.querySelectorAll("#action-button");
+            act = act[act.length-1];
 
             act.parentNode.replaceChild(createStyledButton(), act);
             die();
