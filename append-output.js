@@ -13,7 +13,7 @@ const bannerComment = `// ==UserScript==
 // @author          Fate (https://github.com/FateNotAvailable)
 // @namespace       https://github.com/FateNotAvailable/ViewXtend
 // @supportURL      https://github.com/FateNotAvailable/ViewXtend/issues
-// @updateURL       
+// @updateURL       https://raw.githubusercontent.com/FateNotAvailable/ViewXtend/main/dist/ViewXtend.user.js
 // @license         GPL-3
 // @match           https://www.youtube.com/*
 // @match           https://www.youtube-nocookie.com/*
