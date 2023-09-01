@@ -111,6 +111,16 @@ class ViewXtendAPI {
         </a>`;
         return f
     }
+    suicidalInterval(callback, ms) {
+        function die() {
+          console.log("I'm ending myself!");
+          clearInterval(interval);
+        }
+      
+        const interval = setInterval(() => {
+          callback(die);
+        }, ms);
+    }
 
 }
 
