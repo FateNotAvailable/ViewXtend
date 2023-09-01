@@ -1,8 +1,7 @@
 function download() {
-    if (document.querySelector("body > ytd-app > ytd-popup-container > tp-yt-paper-dialog").style.display == 'none') return;
-
     ViewXtendAPI.suicidalInterval((die)=>{
         try {
+            if (document.querySelector("body > ytd-app > ytd-popup-container > tp-yt-paper-dialog").style.display != 'none') {
             let download_text = document.querySelector("#action-button > yt-button-shape > button > div > span");
             download_text.innerText = "Download";
 
@@ -65,6 +64,7 @@ function download() {
             let sbs = document.querySelectorAll("#subtitle");
             sbs[sbs.length - 1].style.display = 'none';
             die();
+        }
         }
         catch {}
     }, 100)
