@@ -1,4 +1,28 @@
 function drag_speed() {
+    function get_info_elem() {
+        let elem = document.getElementById("vxt-player-info");
+        if (elem) return elem;
+
+        var player__ = document.querySelector("#movie_player");
+        var div_element = document.createElement("div");
+        div_element.id = "vxt-player-info";
+        div_element.style.display = 'block';
+        div_element.style.color = "#fff";
+        div_element.style.left = "0";
+        div_element.style.padding = "7px 0";
+        div_element.style.position = "absolute";
+        div_element.style.top = "0";
+        div_element.style.width = "100%";
+        div_element.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+        div_element.style.fontSize = '17px';
+        div_element.style.textAlign = 'center';
+        div_element.style.zIndex = '2147483647';
+        div_element.innerText = "10x";
+        player__.appendChild(div_element);
+        return document.getElementById("vxt-player-info");
+    }
+
+
     let DS_API = new window.ViewXtendAPI();
     DS_API.suicidalInterval(() => {
         try {
@@ -26,12 +50,13 @@ function drag_speed() {
                         // Find the closest speed from the predefined list
                         const closestSpeed = findClosestSpeed(playbackSpeed, playbackSpeeds);
                         video.playbackRate = closestSpeed;
-                        DS_API.get_video_title().innerText = closestSpeed.toString();
+                        get_info_elem().innerText = `${closestSpeed.toString()}x`;
                     }
 
                     function handleMouseUp() {
                         document.removeEventListener('mousemove', handleMouseMove);
                         document.removeEventListener('mouseup', handleMouseUp);
+                        DS_API.get_player().play();
                     }
                 }
             });
