@@ -1,6 +1,6 @@
 function drag_speed() {
-    if (window._faf3egw4p == true) { return };
-        let DS_API = new window.ViewXtend();
+    let DS_API = new window.ViewXtend();
+    DS_API.suicidalInterval = () => {
         const video = DS_API.get_player();
         let playbackSpeed = 1; // Start with 1 as the initial playback speed
     
@@ -41,7 +41,8 @@ function drag_speed() {
                 return Math.abs(current - targetSpeed) < Math.abs(closest - targetSpeed) ? current : closest;
             });
         }
-        window._faf3egw4p = true;
+    }
+
 };
 window.addEventListener("load", ()=>{
     drag_speed();
