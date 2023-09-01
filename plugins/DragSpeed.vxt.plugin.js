@@ -1,7 +1,8 @@
 function drag_speed() {
     if (window._faf3egw4p == true) { return };
     try {
-        const video = this.API.get_player();
+        let DS_API = new window.ViewXtend();
+        const video = DS_API.get_player();
         let playbackSpeed = 1; // Start with 1 as the initial playback speed
     
         const playbackSpeeds = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
