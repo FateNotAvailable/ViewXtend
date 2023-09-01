@@ -21,7 +21,9 @@ PL_VX_API.suicidalInterval((die)=>{
 setInterval(()=>{
     let title = PL_VX_API.get_title();
 
-    if (!title.includes("Premium")) {
-        PL_VX_API.set_title(title + " Premium");
+    if (window.location.pathname == "/") {
+        if (!title.includes("Premium")) {
+            PL_VX_API.set_title(title + " Premium");
+        }
     }
 }, 100)
