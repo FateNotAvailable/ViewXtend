@@ -194,7 +194,7 @@
                 let card = document.createElement("div");
                 card.className = "vxt-card";
                 card.innerHTML = `<div class="vxt-switch">
-                    <input class="tgl tgl-skewed" onclick="switch_click('${item['id']}', '${item['url']}, '${item['runs_on']}')" id="plugin-${item['id']}" type="checkbox"/>
+                    <input class="tgl tgl-skewed" onclick="switch_click('${item['id']}', '${item['url']}'', '${item['runs_on']}')" id="plugin-${item['id']}" type="checkbox"/>
                     <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="plugin-${item['id']}"></label>
                 </div>
                 <div class="vxt-title">${item['name']}</div>
