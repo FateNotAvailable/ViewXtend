@@ -26,7 +26,7 @@ function drag_speed() {
                         // Find the closest speed from the predefined list
                         const closestSpeed = findClosestSpeed(playbackSpeed, playbackSpeeds);
                         video.playbackRate = closestSpeed;
-                        API.get_video_title().innerText = closestSpeed.toString();
+                        DS_API.get_video_title().innerText = closestSpeed.toString();
                     }
 
                     function handleMouseUp() {
