@@ -66,9 +66,10 @@ function drag_speed() {
 
                             setTimeout(()=>{
                                 hide(elem);
-                                if (DS_API.get_player().paused) {
-                                    DS_API.get_player().play();
-                                }
+                                // TODO: Fix pauses after change
+                                //if (DS_API.get_player().paused) {
+                                //    DS_API.get_player().play();
+                                //}
                             }, 1000)
                         }
                     }
