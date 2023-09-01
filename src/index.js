@@ -1,7 +1,8 @@
 import ViewXtendAPI from "./api/ViewXtend";
 import Plugins from "./utils/Plugins";
 import htmlContent from "./web/index.html";
-window.ViewXtendAPI = ViewXtendAPI;
+window.ViewXtendAPI_direct = ViewXtendAPI;
+window.ViewXtendAPI = new ViewXtendAPI;
 
 /*
 get_premium_flag_logo(alpha2_code) {
@@ -62,4 +63,5 @@ const vx_main_fun = () => {
 
 
 }
+
 vx_main_fun()

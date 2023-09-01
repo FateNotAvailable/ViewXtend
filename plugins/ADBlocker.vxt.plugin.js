@@ -1,8 +1,6 @@
-import ViewXtendAPI from "../api/ViewXtendAPI";
-
 class ADBlock {
     constructor() {
-        this.VX_API = new ViewXtendAPI();
+        this.VX_API = new window.ViewXtendAPI_direct();
     }
 
     block_general_ads() {

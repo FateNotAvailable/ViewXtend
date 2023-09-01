@@ -1,4 +1,4 @@
-let PL_VX_API = new window.ViewXtendAPI();
+let PL_VX_API = new window.ViewXtendAPI_direct();
 
 PL_VX_API.suicidalInterval((die)=>{
     try {

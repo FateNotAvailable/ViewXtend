@@ -3,23 +3,31 @@
         "name": "AD Blocker",
         "description": "Blocks advertisements.",
         "author": "Fate",
-        "url": "https://viewxtend.pages.dev/plugins/ADBlocker.vxt.plugin.js",
+        "url": "https://viewxtend.pages.dev/plugins/ADBlocker.vxt.plugin.js?v=1.0.0",
         "runs_on": ".*",
         "id": "adblock"
     },
     {
-        "name": "Drag Speed",
+        "name": "Drag Speed (BETA)",
         "description": "Dragging with right click changes playback speed.",
         "author": "Fate",
-        "url": "https://viewxtend.pages.dev/plugins/DragSpeed.vxt.plugin.js",
+        "url": "https://viewxtend.pages.dev/plugins/DragSpeed.vxt.plugin.js?v=1.0.0",
         "runs_on": "^(?:https?:\\/\\/)?(?:www\\.)?(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)([a-zA-Z0-9_-]+)$",
         "id": "dragspeed"
+    },
+    {
+        "name": "Downloads",
+        "description": "Enables the download button",
+        "author": "Fate",
+        "url": "https://viewxtend.pages.dev/plugins/Download.vxt.plugin.js?v=1.0.0",
+        "runs_on": "^(?:https?:\\/\\/)?(?:www\\.)?(?:youtube\\.com\\/watch\\?v=|youtu\\.be\\/)([a-zA-Z0-9_-]+)$",
+        "id": "downloads"
     },
     {
         "name": "Premium Heading",
         "description": "Changes logo and title to premium one.",
         "author": "Fate",
-        "url": "https://viewxtend.pages.dev/plugins/PremiumHeading.vxt.plugin.js",
+        "url": "https://viewxtend.pages.dev/plugins/PremiumHeading.vxt.plugin.js?v=1.0.0",
         "runs_on": ".*",
         "id": "premiumheading"
     },
@@ -27,7 +35,7 @@
         "name": "PornHub Logo",
         "description": "I have no idea why i had this idea.",
         "author": "Fate",
-        "url": "https://viewxtend.pages.dev/plugins/PornHubLogo.vxt.plugin.js",
+        "url": "https://viewxtend.pages.dev/plugins/PornHubLogo.vxt.plugin.js?v=1.0.0",
         "runs_on": ".*",
         "id": "phlogo"
     }

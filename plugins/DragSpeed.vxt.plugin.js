@@ -30,7 +30,7 @@ function drag_speed() {
         elem.style.display = "block";
     }
 
-    let DS_API = new window.ViewXtendAPI();
+    let DS_API = new window.ViewXtendAPI_direct();
     DS_API.suicidalInterval(() => {
         try {
             const video = DS_API.get_player();
