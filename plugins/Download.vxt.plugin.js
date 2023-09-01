@@ -58,5 +58,12 @@ function download() {
             die();
         }
         catch {}
-    }, 1000)
+    }, 100)
 }
+
+window.addEventListener("load", ()=>{
+    let e = document.querySelector("#flexible-item-buttons > ytd-download-button-renderer > ytd-button-renderer > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill");
+    e.addEventListener("click", ()=>{
+        download()
+    })
+})
