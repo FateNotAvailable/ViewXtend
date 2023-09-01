@@ -1,4 +1,6 @@
 function download() {
+    if (document.querySelector("body > ytd-app > ytd-popup-container > tp-yt-paper-dialog").style.display == 'none') return;
+
     ViewXtendAPI.suicidalInterval((die)=>{
         try {
             let download_text = document.querySelector("#action-button > yt-button-shape > button > div > span");
@@ -74,5 +76,5 @@ window.addEventListener("load", ()=>{
         e.addEventListener("click", ()=>{
             download()
         })
-    }, 2000)
+    }, 3000)
 })
