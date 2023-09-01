@@ -185,6 +185,26 @@
     </div>
 
     <script>
+        const ld = () => {
+            // Check if the 'plugins' key exists in local storage
+            let pluginsJSON = localStorage.getItem('plugins');
+            if (pluginsJSON) {
+              const plugins = JSON.parse(pluginsJSON);
+          
+              // Loop through the plugins and update the corresponding inputs
+              for (const id in plugins) {
+                const url = plugins[id];
+                const element = document.getElementById(`plugin-${id}`);
+          
+                if (element) {
+                  // Set the input's checked property based on the presence of the plugin
+                  element.checked = true;
+                }
+              }
+            }
+        };
+
+
         let container = document.getElementsByClassName("vxt-grid-container")[0]
         var xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function () {
@@ -201,6 +221,7 @@
                 <div class="vxt-description">${item['description']}</div>`;
                 container.appendChild(card);
             });;
+            ld();
         } else if (xhr.readyState === 4 && xhr.status !== 200) {
             console.error('Failed to load data.json');
         }

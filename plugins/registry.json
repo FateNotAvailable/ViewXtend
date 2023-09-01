@@ -12,7 +12,7 @@
         "description": "Dragging with right click changes playback speed.",
         "author": "Fate",
         "url": "https://viewxtend.pages.dev/plugins/DragSpeed.vxt.plugin.js",
-        "runs_on": ".*\/watch\\?v=.*",
+        "runs_on": ".*\/watch\\\\?v=.*",
         "id": "dragspeed"
     },
     {
