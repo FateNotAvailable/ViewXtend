@@ -1,5 +1,5 @@
 function drag_speed() {
-    let DS_API = new window.ViewXtend();
+    let DS_API = new window.ViewXtendAPI();
     DS_API.suicidalInterval(() => {
         try {
             const video = DS_API.get_player();
