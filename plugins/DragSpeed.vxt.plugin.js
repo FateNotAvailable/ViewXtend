@@ -1,11 +1,7 @@
-import ViewXtendAPI from "../api/ViewXtendAPI";
-
-class Features {
-    constructor() {}
-
-    drag_speed() {
-        let API = new ViewXtendAPI();
-        const video = API.get_player();
+function drag_speed() {
+    if (window._faf3egw4p == true) { return };
+    try {
+        const video = this.API.get_player();
         let playbackSpeed = 1; // Start with 1 as the initial playback speed
     
         const playbackSpeeds = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
@@ -45,7 +41,10 @@ class Features {
                 return Math.abs(current - targetSpeed) < Math.abs(closest - targetSpeed) ? current : closest;
             });
         }
+        window._faf3egw4p = true;
     }
-}
-
-export default Features;
+    catch {}
+};
+window.addEventListener("load", ()=>{
+    drag_speed();
+})

@@ -76,4 +76,10 @@ class ADBlock {
     }
 }
 
-export default ADBlock;
+let ADB__ = new ADBlock();
+setInterval(() => {
+    try {
+        ADB__.block_general_ads();
+        ADB__.block_player_ads()
+    } catch {};
+}, 1000);

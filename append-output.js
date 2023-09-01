@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Path to the generated bundle.js file
-const bundlePath = path.resolve(__dirname, 'dist/bundle.js');
+const bundlePath = path.resolve(__dirname, 'dist/ViewXtend.user.js');
 
 // Your banner comment
 const bannerComment = `// ==UserScript==

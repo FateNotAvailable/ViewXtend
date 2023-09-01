@@ -1,0 +1,10 @@
+[
+    {
+        "author": "Fate",
+        "name": "AD Blocker",
+        "description": "Blocks advertisements",
+        "url": "https://www.svgrepo.com/_next/static/chunks/872.f9c6f62cf75ee702.js",
+        "runs_on": ".*",
+        "id": "adblock"
+    }
+]
