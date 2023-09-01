@@ -56,17 +56,21 @@ function drag_speed() {
 
                         // Find the closest speed from the predefined list
                         const closestSpeed = findClosestSpeed(playbackSpeed, playbackSpeeds);
+                        let old_pr = video.playbackRate;
                         video.playbackRate = closestSpeed;
                         let elem = get_info_elem();
-                        show(elem);
-                        elem.innerText = `${closestSpeed.toString()}x`;
 
-                        setTimeout(()=>{
-                            hide(elem);
-                            if (DS_API.get_player().paused) {
-                                DS_API.get_player().play();
-                            }
-                        }, 1000)
+                        if (old_pr != closestSpeed) {
+                            show(elem);
+                            elem.innerText = `${closestSpeed.toString()}x`;
+
+                            setTimeout(()=>{
+                                hide(elem);
+                                if (DS_API.get_player().paused) {
+                                    DS_API.get_player().play();
+                                }
+                            }, 1000)
+                        }
                     }
 
                     function handleMouseUp() {
