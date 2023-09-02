@@ -15,6 +15,7 @@ const bannerComment = `// ==UserScript==
 // @supportURL      https://github.com/FateNotAvailable/ViewXtend/issues
 // @updateURL       https://raw.githubusercontent.com/FateNotAvailable/ViewXtend/main/dist/ViewXtend.user.js
 // @license         GPL-3
+// @icon            https://i.ibb.co/cwvhZQN/View-Xtend.png
 // @match           https://www.youtube.com/*
 // @match           https://www.youtube-nocookie.com/*
 // @match           https://m.youtube.com/*

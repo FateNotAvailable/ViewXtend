@@ -1,7 +1,7 @@
 
 # ViewXtend
 
-YouTube with plugin functionality.  
+Adds plugin functionality to youtube.  
 This Project is still in development.  
 
 ## Plugins
@@ -24,9 +24,8 @@ This Project is still in development.
 
 ## Features
 
-- Premium Banner
-- Adblock
-- Right-click drag to change playback speed
+- API (window.ViewXtend)  
+- Simple plugins section  
 
 ## Installation
 

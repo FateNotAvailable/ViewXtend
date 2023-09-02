@@ -7,6 +7,9 @@ module.exports = {
     filename: 'ViewXtend.user.js',
     path: path.resolve(__dirname, 'dist'),
   },
+  optimization: {
+    minimize: false, // Disable minification
+  },
   module: {
     rules: [
       {
