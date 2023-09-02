@@ -1,5 +1,5 @@
 function download() {
-    ViewXtendAPI.suicidalInterval((die)=>{
+    setInterval(()=>{
         try {
             if (document.querySelector("body > ytd-app > ytd-popup-container > tp-yt-paper-dialog").style.display != 'none') {
             let download_text = document.querySelector("#action-button > yt-button-shape > button > div > span");
@@ -67,14 +67,9 @@ function download() {
         }
         }
         catch {}
-    }, 100)
+    }, 1000)
 }
 
 window.addEventListener("load", ()=>{
-    setTimeout(()=>{
-        let e = document.querySelector("#flexible-item-buttons > ytd-download-button-renderer > ytd-button-renderer > yt-button-shape > button > yt-touch-feedback-shape > div > div.yt-spec-touch-feedback-shape__fill");
-        e.addEventListener("click", ()=>{
-            download()
-        })
-    }, 3000)
+    download()
 })
