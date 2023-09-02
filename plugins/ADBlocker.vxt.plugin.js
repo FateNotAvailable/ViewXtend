@@ -1,11 +1,11 @@
 class ADBlock {
     constructor() {
-        this.VX_API = new window.ViewXtendAPI_direct();
+        window.ViewXtendAPI = new window.ViewXtendAPI_direct();
     }
 
     block_general_ads() {
-        let ad_videos = this.VX_API.get_fake_videos();
-        let legit_videos = this.VX_API.get_videos();
+        let ad_videos = window.ViewXtendAPI.get_fake_videos();
+        let legit_videos = window.ViewXtendAPI.get_videos();
         let last_video = legit_videos[legit_videos.length - 1];
 
         for (let i = 0; i < ad_videos.length; i++) {
@@ -22,9 +22,9 @@ class ADBlock {
     }
 
     block_player_ads() {
-        if (this.VX_API.get_player() !== undefined) {
+        if (window.ViewXtendAPI.get_player() !== undefined) {
             let ad = document.getElementsByClassName("video-ads ytp-ad-module")[0];
-            let vid = this.VX_API.get_player();
+            let vid = window.ViewXtendAPI.get_player();
 
             if (ad == undefined) {
                 // Preserve the original playback rate

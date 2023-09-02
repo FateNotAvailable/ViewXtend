@@ -30,10 +30,8 @@ function drag_speed() {
         elem.style.display = "block";
     }
 
-    let DS_API = new window.ViewXtendAPI_direct();
-    DS_API.suicidalInterval(() => {
-        try {
-            const video = DS_API.get_player();
+    window.ViewXtendAPI.get_player()
+        .then((video) => {
             let playbackSpeed = 1; // Start with 1 as the initial playback speed
 
             const playbackSpeeds = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
@@ -70,7 +68,7 @@ function drag_speed() {
                                 //if (DS_API.get_player().paused) {
                                 //    DS_API.get_player().play();
                                 //}
-                            }, 1000)
+                            }, 5000)
                         }
                     }
 
@@ -87,9 +85,10 @@ function drag_speed() {
                     return Math.abs(current - targetSpeed) < Math.abs(closest - targetSpeed) ? current : closest;
                 });
             };
-            die();
-        } catch {}
-    }, 1000);
+    })
+    .catch((error) => {
+        console.error(error.message);
+    });
 
 };
 window.addEventListener("load", () => {

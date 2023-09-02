@@ -2,7 +2,7 @@
 // @name            ViewXtend
 // @description     Youtube with extra features
 // @icon            None
-// @version         1.0.0
+// @version         1.0.1
 // @author          Fate (https://github.com/FateNotAvailable)
 // @namespace       https://github.com/FateNotAvailable/ViewXtend
 // @supportURL      https://github.com/FateNotAvailable/ViewXtend/issues
@@ -32,60 +32,129 @@ class ViewXtendAPI {
         
     }
 
+    waitForElementBy(by, selector, timeout) {
+        return new Promise((resolve, reject) => {
+          const startTime = Date.now();
+      
+          function checkElement() {
+            let element;
+            if (by == "q") {
+                element = document.querySelector(selector);
+            }
+            else if (by == "t") {
+                element = document.getElementsByTagName(selector);
+            }
+            
+            if (element) {
+              resolve(element);
+            } else if (Date.now() - startTime >= timeout) {
+              reject(new Error(`Element '${selector}' not found within ${timeout}ms`));
+            } else {
+              setTimeout(checkElement, 100); // Check again in 100ms
+            }
+          }
+      
+          checkElement();
+        });
+    }
+
+    waitForElementNotHidden(selector, timeout) {
+        return new Promise((resolve, reject) => {
+          const startTime = Date.now();
+      
+          function checkElement() {
+            let element = document.querySelector(selector);
+            
+            if (element) {
+                if (element.style.display != 'none') {
+                    resolve(element);
+                }
+                else {
+                    setTimeout(checkElement, 100); // Check again in 100ms
+                }
+            } else if (Date.now() - startTime >= timeout) {
+              reject(new Error(`Element '${selector}' not found within ${timeout}ms`));
+            } else {
+              setTimeout(checkElement, 100); // Check again in 100ms
+            }
+          }
+      
+          checkElement();
+        });
+    }
+
     get_player() {
         /**
-         * Get's video player element
+         * Gets video player element
          */
 
-        const found_element = document.querySelector("#movie_player > div.html5-video-container > video");
-        if (found_element) {
-            return found_element;
-        }
-        return null;
+        return this.waitForElementBy("q", "#movie_player > div.html5-video-container > video", 25000);
     }
 
     get_logo() {
         /**
-         * Get's youtube logo
+         * Gets youtube logo
          */
 
-        const found_element = document.querySelector("#logo-icon > yt-icon-shape > icon-shape > div > svg");
-        if (found_element) {
-            return found_element;
-        }
-        return null;
+        return this.waitForElementBy("q", "#logo-icon > yt-icon-shape > icon-shape > div > svg", 25000)
     }
 
     get_videos() {
+        /**
+         * Gets videos as html tags
+         */
+        //return this.waitForElementBy("t", "ytd-rich-grid-media", 25000);
         return document.getElementsByTagName("ytd-rich-grid-media");
+        
     }
 
     get_fake_videos() {
+        /**
+         * Get ads that look like videos
+         */
+        //return this.waitForElementBy("t", "ytd-ad-slot-renderer", 25000);
         return document.getElementsByTagName("ytd-ad-slot-renderer");
     }
 
     set_title(title) {
+        /**
+         * Set page title
+         */
         document.title = title
     }
 
     get_title() {
+        /**
+         * Get page title
+         */
         return document.title
     }
 
-    get_video_title() {
-        return document.querySelector("#title > h1 > yt-formatted-string")
-    }
-
     get_video_download_button() {
-        return document.querySelector("#action-button > yt-button-shape > button > div > span")
+        return this.waitForElementBy("q", "#action-button > yt-button-shape > button > div > span", 25000)
     }
 
     get_download_dialog() {
-        return document.querySelector("body > ytd-app > ytd-popup-container > tp-yt-paper-dialog")
+        return this.waitForElementNotHidden("body > ytd-app > ytd-popup-container > tp-yt-paper-dialog", 25000)
     }
 
     get_download_options() {
-        return document.querySelector("#premium-options").childNodes;
+        return new Promise((resolve, reject) => {
+            const startTime = Date.now();
+        
+            function checkElement() {
+              let element = document.querySelector("#premium-options");
+              
+              if (element) {
+                return resolve(element.childNodes);
+              } else if (Date.now() - startTime >= timeout) {
+                reject(new Error(`Element '${selector}' not found within ${timeout}ms`));
+              } else {
+                setTimeout(checkElement, 100); // Check again in 100ms
+              }
+            }
+            checkElement();
+        });
     }
 
     get_checked_download() {
