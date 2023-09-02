@@ -5,7 +5,8 @@ function download() {
             let download_text = document.querySelector("#action-button > yt-button-shape > button > div > span");
             download_text.innerText = "Download";
 
-            document.querySelectorAll("#description")[4].style.display = 'none';
+            let desc = document.querySelectorAll("#description");
+            desc[desc.length-1].style.display = 'none';
 
 
             function createStyledButton() {
