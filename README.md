@@ -28,8 +28,7 @@ This Project is still in development.
 - Simple plugins section  
 
 ## Installation
-
-- Simply install userscript (ViewXtend.js) from dist/ViewXtend.js
+[![Greasy Fork](https://i.ibb.co/QHVwt32/166113712-1bc3d654-1342-4f1e-9845-21c3b21524b1.png)](https://greasyfork.org/en/scripts/474406-viewxtend) or [![Greasy Fork](https://i.ibb.co/K0WjBbg/get-it-on-github-1.png)](https://github.com/FateNotAvailable/ViewXtend/raw/main/dist/ViewXtend.user.js)
 
 ## Screenshots
 
