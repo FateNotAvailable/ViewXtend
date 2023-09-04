@@ -21,11 +21,11 @@ window.ViewXtendAPI.get_logo().then((element) => {
 
 
 setInterval(()=>{
-    let title = PL_VX_API.get_title();
+    let title = window.ViewXtendAPI.get_title();
 
     if (window.location.pathname == "/") {
         if (!title.includes("Premium")) {
-            PL_VX_API.set_title(title + " Premium");
+          window.ViewXtendAPI.set_title(title + " Premium");
         }
     }
 }, 100)
