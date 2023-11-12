@@ -140,6 +140,7 @@ class ViewXtendAPI {
 
     create_plugins_button() {
         const f = document.createElement("ytd-compact-link-renderer");
+        f.setAttribute("injected", "true")
         f.className = "style-scope yt-multi-page-menu-section-renderer"
         f.setAttribute("compact-link-style", "")
         f.setAttribute("hide-secondary-string", "")

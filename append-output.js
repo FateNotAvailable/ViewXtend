@@ -9,7 +9,7 @@ const bannerComment = `// ==UserScript==
 // @name            ViewXtend
 // @description     Youtube with extra features
 // @icon            None
-// @version         1.0.1
+// @version         1.0.2
 // @author          Fate (https://github.com/FateNotAvailable)
 // @namespace       https://github.com/FateNotAvailable/ViewXtend
 // @supportURL      https://github.com/FateNotAvailable/ViewXtend/issues
